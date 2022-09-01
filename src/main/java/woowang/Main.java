@@ -2,7 +2,6 @@ package woowang;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -15,13 +14,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Main {
     final static private String OUTPUT_PATH = "data.json";
     final static private String DRIVER_PATH = "chromedriver";
     public static void main(String[] args) throws InterruptedException, IOException {
-        Path path = Paths.get(System.getProperty("user.dir"), "chromedriver");
+        Path path = Paths.get(System.getProperty("user.dir"), DRIVER_PATH);
 
         System.setProperty("webdriver.chrome.driver", path.toString());
         ChromeOptions options = new ChromeOptions();
